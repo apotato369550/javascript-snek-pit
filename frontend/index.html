@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake: Multiplayer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        #game-screen{
+            display: none;
+        }
+        #instructions {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <section class="vh-100">
+        <div class="container h-100" id="initial-screen">
+            <div class="d-flex flex-column align-items-center justify-content-center h-75">
+                <h1>Snek Pit</h1>
+                <button type="submit" class="button button-success" id="new-game-button">Create New Game</button>
+                <div>OR</div>
+                <div class="form-group">
+                    <input type="text" placeholder="Enter Game Code" id="game-code-input">
+                </div>
+                <button type="submit" class="button button-success" id="join-game-button">Join Game</button>
+                <button type="button" class="button button-success mt-2" onclick="document.getElementById('instructions').style.display = 'flex'">How to play?</button>
+            </div>
+            <div class="flex-column align-items-center justify-content-center" id="instructions">
+                <h2>How to play: </h1>
+                <ol>
+                    <li>You are snek.</li>
+                    <li>You must eat to be thicc.</li>
+                    <li>Another snek also lives in your room.</li>
+                    <li>Fight to the death.</li>
+                </ol>
+            </div>
+        </div>
+        <div id="game-screen" class="h-100">
+            <div class="d-flex flex-column align-items-center justify-content-center h-100">
+                <span id="game-code-display"></span>
+                <canvas id="canvas"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.0/socket.io.js" integrity="sha512-+l9L4lMTFNy3dEglQpprf7jQBhQsQ3/WvOnjaN/+/L4i0jOstgScV0q2TjfvRF4V+ZePMDuZYIQtg5T4MKr+MQ==" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>
